@@ -1,8 +1,8 @@
 import angular from 'angular';
 
-import {App} from './app/containers/App';
+import {App} from './app/containers/app';
 import {Header} from './app/components/header/Header';
-import {TaskBoard} from './app/components/taskboard/taskBoard';
+import {TaskBoard} from './app/components/taskBoard/taskBoard';
 import {Footer} from './app/components/footer/Footer';
 import {LeftMenu} from './app/components/leftMenu/leftMenu';
 import {Card} from './app/components/card/card';
