@@ -1,0 +1,47 @@
+<div class="sandwich-btn">
+  <span class="icon-sandwich-btn" ng-click="$ctrl.menuVisible = !$ctrl.menuVisible"></span>
+</div>
+
+<div class="left-drawer animated slideInLeft" ng-show="$ctrl.menuVisible">
+  <div class="left-close" ng-click="$ctrl.menuVisible=false">
+    <a href="#">
+      <img src="../../../images/close-section.svg" alt="close section" class="rotate-close">
+    </a>
+  </div>
+  <div class="left-drawer-container" ng-scrollbars>
+    <a href="#" class="create-new-phase">Create New Phase</a>
+
+    <div class="heading">All Phases</div>
+    <div class="status-btn-container">
+      <a class="status-btn" ng-repeat="phase in $ctrl.epics[$ctrl.current.epicIndex].phases" ng-class="$index==$ctrl.current.phaseIndex?'active':''" ng-click="$ctrl.current.phaseIndex=$index">{{phase.title}}</a>
+    </div>
+    <div>
+      <div class="phase-info-container">
+        <a href="#" class="link-a"> <span class="icon-phase-type"></span></a>
+      </div>
+      <div class="phase-name">
+        <input class="phase-name2" placeholder="Untitled Phase">
+      </div>
+      <div class="progress-container">
+        <div class="progress-status">0/0 task completed</div>
+        <div class="progress-bg">
+           <div class="progress-bar"></div>
+        </div>
+      </div>
+      <div class="clm-divide">
+        <div class="start-date">Start date:</div>
+        <div class="start-date-info">Dec 17, 2017</div>
+      </div>
+      <div class="clm-divide">
+        <div class="start-date">Due date:</div>
+        <div class="start-date-info">Feb 20, 2017</div>
+      </div>
+      <div class="clm-divide2">
+        <div class="start-date">Assigned to:</div>
+        <div class="add-profile"><img src="../../../images/add.svg" alt="" class="add"/></div>
+      </div>
+    </div>
+    <div class="phase-divider"></div>
+    <epic ng-repeat="epic in $ctrl.epics" current-item="epic" ng-class="$index==$ctrl.current.epicIndex?'active':''" ng-click="$ctrl.changeEpic($index)"></epic>
+  </div>
+</div>

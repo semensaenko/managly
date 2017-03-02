@@ -1,0 +1,23 @@
+
+
+<div class="section-container" data-ng-model="$ctrl.epics[$ctrl.selectedEpicIndex]" id="board">
+  <div class="main-heading">{{$ctrl.epics[$ctrl.current.epicIndex].title}}</div>
+  <div class="sort-section">
+    <div class="sortby">Sort by:</div>
+    <a href="#" class="sortby-link sortby-active">All</a>
+    <a href="#" class="sortby-link">My Tasks</a>
+    <a href="#" class="sortby-link">Due Today</a>
+    <a href="#" class="sortby-link">Recently Updated</a>
+
+    <div class="sortby-input-box">
+      <input placeholder="Search by" class="sortby-input">
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <card ng-repeat="column in $ctrl.epics[$ctrl.current.epicIndex].phases[$ctrl.current.phaseIndex].columns" current-item="column"></card>
+    <new-card></new-card>
+  </div>
+</div>
+
+
+

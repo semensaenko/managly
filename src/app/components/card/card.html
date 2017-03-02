@@ -1,0 +1,16 @@
+<div class="task-bg"  ng-scrollbars ng-scrollbars-config="$ctrl.scrollBarConfig">
+  <div class="task-heading">{{$ctrl.currentItem.name}}</div>
+  <div class="no-task">({{$ctrl.currentItem.tasks.length}})</div>
+  <ul class="task-wrapper" as-sortable ng-model="$ctrl.currentItem.tasks">
+    <li ng-repeat="task in $ctrl.currentItem.tasks" as-sortable-item>
+      <task current-item="task"></task>
+    </li>
+  </ul>
+  <center ng-if="!$ctrl.currentItem.tasks.length">
+    <div class="empty-board-container">
+      <div class="empty-board"></div>
+      <div class="empty-card">Card is empty</div>
+      <div class="empty-card-subtask">Drag some tasks here</div>
+    </div>
+  </center>
+</div>

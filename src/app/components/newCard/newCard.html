@@ -1,0 +1,21 @@
+<div class="task-bg">
+
+  <a class="task-heading add-column-link" ng-click="$ctrl.adding=true" ng-if="!$ctrl.adding" ng-if="!$ctrl.adding">+ New
+    Section</a>
+
+  <div class="add-column-form" ng-if="$ctrl.adding">
+    <label>
+      New Column Name
+      <input ng-model="$ctrl.newColumnName" class="form-control add-column-input" type="text">
+    </label>
+    <div class="text-right">
+        <button class="btn btn-success" ng-click="$ctrl.addNewColumn()">
+          <span class="glyphicon glyphicon-ok"></span>
+        </button>
+
+        <button class="btn btn-default" ng-click="$ctrl.adding=false">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+    </div>
+  </div>
+</div>
